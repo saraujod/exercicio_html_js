@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML com JS</title>
+    <link rel="stylesheet" href="./main.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>Meu Formulário</h1>
+        <form id="meuFormulário">
+            <input type="number" id="campoA" name="campoA" required placeholder="Campo A" />
+            <input type="number" id="campoB" name="campoB" required placeholder="Campo B" />
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById("meuFormulário").addEventListener("submit", function(event) {
+            event.preventDefault(); // Impede o envio do formulário
+
+            var campoA = parseFloat(document.getElementById("campoA").value);
+            var campoB = parseFloat(document.getElementById("campoB").value);
+
+            if (campoB > campoA) {
+                alert("Formulario Valido!");
+                // Alerta quando o Formulário for valido
+            } else {
+                alert("Formulário inválido! O campo B deve ser maior que o campo A ");
+                // Alerta quando formulário for invalido
+            }
+        });
+    </script>
+</body>
+</html>
